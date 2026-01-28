@@ -1,0 +1,70 @@
+# Python virtual environment
+venv/
+env/
+ENV/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+.npm
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Database
+data/
+*.db
+*.sqlite
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# Git
+.git/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
