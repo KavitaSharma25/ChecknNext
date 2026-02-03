@@ -52,6 +52,10 @@ class AnalyzeResponse(BaseModel):
         default_factory=list,
         description="Actionable suggestions to improve resume fit"
     )
+    analysis_id: Optional[str] = Field(
+        None,
+        description="MongoDB document ID for this analysis result"
+    )
 
     class Config:
         json_schema_extra = {

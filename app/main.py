@@ -12,6 +12,7 @@ import time
 import os
 
 from app.routes.analyze import router as analyze_router
+from app.services.database import connect_to_mongo, close_mongo_connection
 
 # Configure logging
 logging.basicConfig(
@@ -32,6 +33,10 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info("🚀 Starting AI Resume-JD Matcher API...")
     
+    # Connect to MongoDB
+    logger.info("🗄️  Initializing MongoDB...")
+    await connect_to_mongo()
+    
     # Verify OpenAI API key
     openai_key = os.getenv("OPENAI_API_KEY")
     if not openai_key:
@@ -45,6 +50,7 @@ async def lifespan(app: FastAPI):
     
     # Shutdown
     logger.info("🛑 Shutting down application...")
+    await close_mongo_connection()
     logger.info("✅ Application shutdown complete")
 
 
